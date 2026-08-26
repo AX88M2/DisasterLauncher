@@ -1,0 +1,9 @@
+[submodule "thirdparty/SDL"]
+	path = thirdparty/SDL
+	url = https://github.com/MilesGlitch/SDL.git
+[submodule "thirdparty/jansson"]
+	path = thirdparty/jansson
+	url = https://github.com/akheron/jansson.git
+[submodule "thirdparty/curl"]
+	path = thirdparty/curl
+	url = https://github.com/curl/curl.git

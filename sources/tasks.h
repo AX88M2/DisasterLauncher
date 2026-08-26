@@ -1,0 +1,44 @@
+#ifndef TASKS_H
+#define TASKS_H
+#include "types.h"
+
+#include <jansson.h>
+#include <SDL3/SDL.h>
+
+
+
+typedef struct
+{
+	boolean _running;
+	SDL_Thread* _thread;
+	SDL_Mutex* _mutex;
+} taskmgr_t;
+
+#define lock_ui   (SDL_LockMutex(mgr->_mutex))
+#define unlock_ui (SDL_UnlockMutex(mgr->_mutex))
+
+#ifdef json_foreach
+#undef json_foreach
+#endif
+#define json_foreach(array, index, value) for (index = 0; index < json_array_size(array) && (value = json_array_get(array, index)); index++)
+
+// ui functions
+void		task_show_progress	(taskmgr_t* mgr, boolean toggle);
+void		task_show_status	(taskmgr_t* mgr, boolean toggle);
+
+// tasks
+void		task_fetch_info		(taskmgr_t* mgr);
+void		task_launch_game	(taskmgr_t* mgr);
+void		task_launch_server	(taskmgr_t* mgr);
+void		task_install		(taskmgr_t* mgr, json_t* root);
+
+// helpers
+void		task_runexec		(const string filename, const string cwd);
+boolean		task_exec			(string cmd, char text[4096]);
+boolean		task_check_dotnet	(void);
+
+taskmgr_t*	taskmgr_create(void);
+boolean		taskmgr_do	  (taskmgr_t* mgr, void(*cb)(taskmgr_t*));
+void		taskmgr_free  (taskmgr_t* mgr);
+
+#endif

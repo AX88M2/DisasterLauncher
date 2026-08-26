@@ -1,0 +1,15 @@
+.vs/*
+output/*
+CMakeFiles/*
+*/CMakeFiles/*
+CMakeCache.*
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.cmake
+*.log
+out/*
+build/*
+vcpkg_installed/*
+cmake-build-*/
+.idea/***
