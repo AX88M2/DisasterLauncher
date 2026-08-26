@@ -12,5 +12,3 @@
 2. `git clone --recurse-submodules https://github.com/AX88M2/LauncherDisaster.git `
 4. `cd disaster-launcher`
 5. `cmake -S . -B build && cmake --build build`
-
-### Forking https://github.com/teamexeempire/disaster-launcher.git

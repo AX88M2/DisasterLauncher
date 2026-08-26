@@ -129,9 +129,9 @@ void gui_host(label_t* label)
 void gui_about(label_t* label)
 {
 	SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION, "About",
-		"(c) 2023 Team Exe Empire\n"
+		"Forking MilesGlitch, original author (c) 2023 Team Exe Empire\n"
 		"BUILD " __TIME__ " " __DATE__ "\n"
-		"https://github.com/teamexeempire/disasterlauncher\n\n"
+		"https://github.com/AX88M2/LauncherDisaster\n\n"
 		"DisasterLauncher uses:\n"
 		" -SDL3 (https://libsdl.org)\n"
 		" -libcurl (https://curl.se)\n"
