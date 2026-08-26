@@ -4,6 +4,3 @@
 [submodule "thirdparty/jansson"]
 	path = thirdparty/jansson
 	url = https://github.com/akheron/jansson.git
-[submodule "thirdparty/curl"]
-	path = thirdparty/curl
-	url = https://github.com/curl/curl.git

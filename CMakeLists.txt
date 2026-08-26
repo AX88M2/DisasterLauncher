@@ -16,9 +16,7 @@ add_subdirectory(thirdparty/minizip)
 
 file(GLOB_RECURSE SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/sources/*.c)
 
-add_executable(DisasterLauncher
-	${SOURCES}
-)
+add_executable(DisasterLauncher ${SOURCES})
 
 if (WIN32)
 	target_sources(DisasterLauncher PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/resources/appicon.rc)
@@ -34,30 +32,6 @@ target_link_libraries(DisasterLauncher PRIVATE
 		CURL::libcurl
 		$<$<CXX_COMPILER_ID:MSVC>: wsock32 ws2_32>
 )
-
-
-
-#if(MSVC)
-#	include(FindCurl)
-#	find_package(SDL2 CONFIG REQUIRED)
-#	find_package(jansson CONFIG REQUIRED)
-#	find_package(unofficial-minizip CONFIG)
-#	add_executable(DisasterLauncher WIN32 "appicon.rc")
-#	target_link_libraries(DisasterLauncher PRIVATE SDL2::SDL2main SDL2::SDL2 jansson::jansson unofficial::minizip::minizip ${CURL_LIBRARIES} wsock32 ws2_32)
-#else()
-#	include(FindPkgConfig)
-#
-#	if(NOT PKG_CONFIG_FOUND)
-#		message(FATAL_ERROR "Failed to find pkg_config!")
-#	endif()
-#
-#	pkg_check_modules(SDL2 sdl2)
-#	pkg_check_modules(CURL libcurl)
-#	pkg_check_modules(JSON jansson)
-#
-#	add_executable(DisasterLauncher "")
-#	target_link_libraries(DisasterLauncher PRIVATE ${SDL2_LIBRARIES} ${JSON_LIBRARIES} ${MINIZ_LIBRARIES} ${CURL_LIBRARIES})
-#endif()
 
 target_link_libraries(DisasterLauncher PRIVATE minizip)
 
