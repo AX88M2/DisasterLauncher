@@ -1,11 +1,8 @@
 #ifndef TASKS_H
 #define TASKS_H
 #include "types.h"
-
 #include <jansson.h>
 #include <SDL3/SDL.h>
-
-
 
 typedef struct
 {

@@ -1,7 +1,7 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-// Если ваш репозиторий приватный – то нужен токен для работы. Но если вам не нужен это функционал просто за комментируйте это строчку
+// If your repository private – then need token for work. BUt if you not need this functional just comment this line
 //#define AUTH "ghp_#######################"
 #define CHANGELOG_URL "https://raw.githubusercontent.com/teamexeempire/disaster-launcher/refs/heads/main/servers.json"
 #define LATEST_URL "https://api.github.com/repos/teamexeempire/disaster-launcher/releases/latest"
@@ -9,7 +9,7 @@
 
 #ifdef _WIN32
 #define GAME_EXEC "\"game/Sonicexe The Disaster 2D Remake.exe\""
-#define SERVER_EXEC "server/BetterServer.exe"
+#define SERVER_EXEC "server/DisasterServer.exe"
 #define DISASTER_NAME "DisasterWin"
 #define SERVER_NAME "ServerWin"
 #else
