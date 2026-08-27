@@ -4,7 +4,7 @@
 // If your repository private – then need token for work. BUt if you not need this functional just comment this line
 //#define AUTH "ghp_#######################"
 #define CHANGELOG_URL "https://raw.githubusercontent.com/teamexeempire/disaster-launcher/refs/heads/main/servers.json"
-#define LATEST_URL "https://api.github.com/repos/FakerNull0/td2dr-files-launcher/releases/latest"
+#define LATEST_URL "https://api.github.com/repos/teamexeempire/disaster-launcher/releases/latest"
 #define STATUS_SERVER "127.0.0.1"
 
 #ifdef _WIN32
