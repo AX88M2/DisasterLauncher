@@ -1,5 +1,5 @@
 ﻿cmake_minimum_required (VERSION 3.30)
-project(disasterlauncher)
+project(DisasterLauncher)
 
 set(BUILD_SHARED_LIBS OFF)
 set(JANSSON_BUILD_DOCS OFF)
