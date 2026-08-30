@@ -23,7 +23,7 @@ static void label_paint(label_t* label)
 	}
 
 	SDL_FRect dstRect = { label->x, label->y + label->_offset, 8 * label->scale, 6 * label->scale };
-	SDL_Rect hitbox = { (int)label->x, (int)label->y, (int)(8 * label->scale), (int)(6 * label->scale) };
+	SDL_FRect hitbox = { (int)label->x, (int)label->y, (int)(8 * label->scale), (int)(6 * label->scale) };
 	SDL_FRect srcRect = { 0, 0, 8, 6 };
 	SDL_Color color = label->color;
 
@@ -196,16 +196,11 @@ static void label_paint(label_t* label)
 	if (!label->button)
 		return;
 
-	SDL_Point mouse = { 0, 0 };
-	float mouseX = 0;
-	float mouseY = 0;
+	SDL_FPoint mouse = { 0, 0 };
 
-	Uint32 mask = SDL_GetMouseState(&mouseX, &mouseY);
+	Uint32 mask = SDL_GetMouseState(&mouse.x, &mouse.y);
 
-	mouse.x = (int) mouseX;
-	mouse.y = (int) mouseY;
-
-	if (SDL_PointInRect(&mouse, &hitbox) && !label->disabled)
+	if (SDL_PointInRectFloat(&mouse, &hitbox) && !label->disabled)
 	{
 		gCursorState = TRUE;
 
